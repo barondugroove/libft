@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 14:23:19 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/01 20:05:15 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/11 16:05:28 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	dst = (char *)dest;
 	sc = (char *)src;
+	if (!dst && !sc)
+		return (NULL);
 	while (i < n)
 	{
 		dst[i] = sc[i];

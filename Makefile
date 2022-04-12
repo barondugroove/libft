@@ -6,7 +6,7 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/04/05 11:31:56 by bchabot          ###   ########.fr        #
+#    Updated: 2022/04/12 14:49:06 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRCS =	ft_isalpha.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
@@ -54,7 +53,11 @@ CLIB = ar -rcs
 all : $(NAME)
 
 .c.o :
-		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 $(NAME) : $(OBJS)
 	$(CLIB) $(NAME) $(OBJS)

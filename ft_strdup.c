@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:15:07 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/01 20:09:20 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/11 15:34:22 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ char	*ft_strdup(const char *s)
 	char	*dest;
 
 	i = ft_strlen(s);
-	dest = malloc(sizeof(char) * (i + 1));
+	dest = malloc(sizeof(char) * i + 1);
+	if (dest == NULL)
+		return (NULL);
 	ft_strcpy(dest, (char *)s);
 	return (dest);
 }

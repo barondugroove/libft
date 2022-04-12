@@ -3,37 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bchabot <bchabot@student.42angouleme.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 10:45:25 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/05 14:33:09 by bchabot          ###   ########.fr       */
+/*   Created: 2022/04/12 12:05:08 by bchabot           #+#    #+#             */
+/*   Updated: 2022/04/12 14:56:12 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*tab;
 	int		i;
-	int		x;
+	int		j;
 
-	x = ft_strlen(s1);
-	i = 0;
-	tab = malloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (!tab)
+	if (!s1 || !set)
 		return (NULL);
-	while (1)
-	{
-	}
+	i = 0;
+	j = ft_strlen(s1);
+	while (ft_strchr(set, s1[i]))
+		i++;
+	while (ft_strrchr(set, s1[j]))
+		j--;
+	tab = ft_substr(s1, i, (j - i + 1));
 	return (tab);
-}
-
-int	main(void)
-{
-	char str[] = "lorem ipsum dolor sit amet";
-	char set[] = "te";
-
-	printf("%s", ft_strtrim(str, set));
-	return (0);
 }

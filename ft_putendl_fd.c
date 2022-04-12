@@ -6,12 +6,14 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:34:11 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/05 14:19:12 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/05 20:54:02 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
