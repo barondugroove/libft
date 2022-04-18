@@ -6,7 +6,7 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/04/18 11:22:41 by bchabot          ###   ########.fr        #
+#    Updated: 2022/04/18 15:25:22 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ BONUS = ft_lstnew.c \
 
 CC = gcc
 
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
@@ -77,9 +77,6 @@ $(NAME) : $(OBJS)
 
 bonus : $(BONUS_OBJS)
 	$(CLIB) $(NAME) $(BONUS_OBJS)
-
-$(OBJS) :
-	$(CC) -c $(SRCS)
 
 clean :
 	rm -f $(OBJS) $(BONUS_OBJS)
