@@ -6,13 +6,13 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 18:49:12 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/16 15:53:41 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/18 11:41:24 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-static size_t	ft_len(char *s, int c)
+static size_t	ft_len_words(char *s, int c)
 {
 	size_t	i;
 
@@ -22,22 +22,22 @@ static size_t	ft_len(char *s, int c)
 	return (i);
 }
 
-static size_t	ft_strnb(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	i;
-	size_t	strnb;
+	size_t	wordsnb;
 
 	i = 0;
-	strnb = 0;
+	wordsnb = 0;
 	while (s[i] == c && s[i])
 		i++;
 	while (s[i])
 	{
 		if ((s[i] == c && s[i + 1] != c) || !s[i + 1])
-			strnb++;
+			wordsnb++;
 		i++;
 	}
-	return (strnb);
+	return (wordsnb);
 }
 
 char	**ft_split(char const *s, char c)
@@ -50,15 +50,15 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	if (!s)
 		return (NULL);
-	tab = malloc(sizeof(char *) * (ft_strnb(s, c) + 1));
+	tab = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			tab[j++] = ft_substr(s, i, ft_len((char *)s + i, c));
-			i += ft_len((char *)s + i, c);
+			tab[j++] = ft_substr(s, i, ft_len_words((char *)s + i, c));
+			i += ft_len_words((char *)s + i, c);
 		}
 		else
 			i++;
