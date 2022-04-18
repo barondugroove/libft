@@ -1,0 +1,2 @@
+# libft
+MADLIB_FT
