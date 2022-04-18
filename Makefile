@@ -6,7 +6,7 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/04/12 14:49:06 by bchabot          ###   ########.fr        #
+#    Updated: 2022/04/18 11:22:41 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS =	ft_isalpha.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
+		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
 		ft_striteri.c \
@@ -44,10 +45,26 @@ SRCS =	ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
+
 CC = gcc
+
 CFLAGS = -g -Wall -Wextra -Werror
+
 NAME = libft.a
+
 OBJS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(BONUS:.c=.o)
+
 CLIB = ar -rcs
 
 all : $(NAME)
@@ -55,18 +72,17 @@ all : $(NAME)
 .c.o :
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
 $(NAME) : $(OBJS)
 	$(CLIB) $(NAME) $(OBJS)
+
+bonus : $(BONUS_OBJS)
+	$(CLIB) $(NAME) $(BONUS_OBJS)
 
 $(OBJS) :
 	$(CC) -c $(SRCS)
 
 clean :
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
 	rm -rf $(NAME)

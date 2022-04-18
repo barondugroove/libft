@@ -1,61 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/12 18:49:12 by bchabot           #+#    #+#             */
+/*   Updated: 2022/04/16 15:53:41 by bchabot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"libft.h"
 
-char **ft_split(char const *s, char c)
+static size_t	ft_len(char *s, int c)
 {
-	char	**str;
-	int	i;
-	int	x;
-	int	y;
+	size_t	i;
 
-	i = -1;
-	x = 0;
-	y = 0;
-
-	while (s[++i])
-		if (s[i] == c)
-			x++;
-	str = malloc(sizeof(char *) * (x + 1));
-	if (!str)
-		return (NULL);
-	i = -1;
-	x = 0;
-	while (s[++i])
-	{
-		y++;
-		if (s[i] == c || !s[i + 1])
-		{
-			str[x++] = malloc(sizeof(char) * y);
-			if (!str[x - 1])
-				return (NULL);
-			y = 0;
-		}
-	}
-	i = -1;
-	x = 0;
-	y = 0;
-	while (s[++i])
-	{
-		str[x][y++] = s[i];
-		if (s[i] == c)
-		{
-			str[x++][y - 1] = '\0';
-			y = 0;
-		}
-	}
-
-	return (str);
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
 }
 
-int	main (void)
+static size_t	ft_strnb(char const *s, char c)
 {
-	char **str;
-	str = ft_split("salut les gars lol ca va la", ' ');
-	int	i = 0;
+	size_t	i;
+	size_t	strnb;
 
-	while (str[i])
+	i = 0;
+	strnb = 0;
+	while (s[i] == c && s[i])
+		i++;
+	while (s[i])
 	{
-		printf ("%s\n", str[i]);
+		if ((s[i] == c && s[i + 1] != c) || !s[i + 1])
+			strnb++;
 		i++;
 	}
-	return (0);
+	return (strnb);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	char	**tab;
+
+	i = 0;
+	j = 0;
+	if (!s)
+		return (NULL);
+	tab = malloc(sizeof(char *) * (ft_strnb(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			tab[j++] = ft_substr(s, i, ft_len((char *)s + i, c));
+			i += ft_len((char *)s + i, c);
+		}
+		else
+			i++;
+	}
+	tab[j] = NULL;
+	return (tab);
 }
