@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 10:41:45 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/13 10:41:46 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/18 16:04:39 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb >= 9223372036854775807 || size >= 9223372036854775807)
+	if (nmemb >=  65536|| size >= 65536)
 		return (NULL);
 	if (nmemb == 0 || size == 0)
 		return (malloc(1));

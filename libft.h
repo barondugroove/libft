@@ -6,17 +6,14 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:42:41 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/18 11:27:16 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/18 15:45:34 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <stddef.h>
-# include <string.h>
 # include <unistd.h>
 
 typedef struct s_list
