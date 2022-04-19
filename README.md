@@ -1,3 +1,3 @@
 # MADLIB_FT
 
-libft project for made at 42.
+libft project made at 42.
