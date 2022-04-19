@@ -6,7 +6,7 @@
 #    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/04/18 15:25:22 by bchabot          ###   ########.fr        #
+#    Updated: 2022/04/19 11:58:11 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,4 +86,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all re clean fclean
+.PHONY : all re clean fclean bonus

@@ -6,7 +6,7 @@
 /*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 21:36:26 by bchabot           #+#    #+#             */
-/*   Updated: 2022/04/12 11:39:28 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/04/19 12:04:27 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(tab, s2, longueur);
 	return (tab);
 }
-
-/*
-int main(void)
-{
-	char s1[] = "lorem ipsum";
-	char s2[] = "boubiboubi";
-
-	printf("%s", ft_strjoin(s1, s2));
-	return (0);
-}*/
