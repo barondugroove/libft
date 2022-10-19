@@ -6,7 +6,7 @@
 /*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:15:30 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 15:26:37 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:48:05 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlcpy(char *dst, const char *src, int size)
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	i = 0;

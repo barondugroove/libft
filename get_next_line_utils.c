@@ -6,7 +6,7 @@
 /*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:11:24 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 15:37:54 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:47:35 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	ft_strlcat_gnl(char *dst, char *src, int size)
 
 int	ft_strlcpy_gnl(char *dst, char *src, int size)
 {
-	int		i;
+	int			i;
 	char		*str;
 
 	i = 0;
