@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bchabot <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/04/19 11:58:11 by bchabot          ###   ########.fr        #
+#    Updated: 2022/10/19 12:41:24 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,8 @@ SRCS =	ft_isalpha.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
-
-BONUS = ft_lstnew.c \
+		ft_putnbr_fd.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -63,8 +62,6 @@ NAME = libft.a
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS_OBJS = $(BONUS:.c=.o)
-
 CLIB = ar -rcs
 
 all : $(NAME)
@@ -75,15 +72,12 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CLIB) $(NAME) $(OBJS)
 
-bonus : $(BONUS_OBJS)
-	$(CLIB) $(NAME) $(BONUS_OBJS)
-
 clean :
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS)
 
 fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
 
-.PHONY : all re clean fclean bonus
+.PHONY : all re clean fclean
