@@ -6,7 +6,7 @@
 #    By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 14:29:55 by bchabot           #+#    #+#              #
-#    Updated: 2022/10/19 12:41:24 by bchabot          ###   ########.fr        #
+#    Updated: 2022/10/19 15:29:00 by bchabot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS =	ft_isalpha.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strncmp.c \
+		ft_strcpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_strnstr.c \
@@ -41,9 +42,13 @@ SRCS =	ft_isalpha.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 		ft_putchar_fd.c \
+		ft_putchar.c \
 		ft_putstr_fd.c \
+		ft_putstr.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		get_next_line.c \
+		get_next_line_utils.c \
 		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
@@ -52,7 +57,12 @@ SRCS =	ft_isalpha.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c \
+		ft_printf.c \
+		ft_putptr.c \
+		ft_putnbr.c \
+		ft_putnbr_u.c \
+		ft_putnbr_base.c
 
 CC = gcc
 

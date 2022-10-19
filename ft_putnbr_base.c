@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 16:15:07 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 15:29:44 by bchabot          ###   ########.fr       */
+/*   Created: 2022/04/25 15:07:06 by bchabot           #+#    #+#             */
+/*   Updated: 2022/05/31 12:59:44 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strdup(const char *s)
+int	ft_putnbr_base(unsigned long long n, char *base)
 {
-	int		i;
-	char	*dest;
+	int	i;
+	int	len;
 
-	i = ft_strlen(s);
-	dest = malloc(sizeof(char) * i + 1);
-	if (dest == NULL)
-		return (NULL);
-	ft_strcpy(dest, (char *)s);
-	return (dest);
+	i = ft_strlen(base);
+	len = 0;
+	if (n / i == 0)
+	{
+		len += ft_putchar(base[n % i]);
+		return (len);
+	}
+	len += ft_putnbr_base((n / i), base);
+	len += ft_putchar(base[n % i]);
+	return (len);
 }

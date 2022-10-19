@@ -6,11 +6,11 @@
 /*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:27:20 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 12:46:59 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:17:01 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 static int	ft_intlen(int n)
 {

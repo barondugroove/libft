@@ -6,15 +6,15 @@
 /*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 14:23:19 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 12:49:36 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:20:53 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include"libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, int n)
 {
-	size_t	i;
+	int		i;
 	char	*dst;
 	char	*sc;
 

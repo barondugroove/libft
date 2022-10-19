@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bchabot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/31 16:15:07 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 15:29:44 by bchabot          ###   ########.fr       */
+/*   Created: 2022/04/25 16:35:32 by bchabot           #+#    #+#             */
+/*   Updated: 2022/05/31 12:59:30 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strdup(const char *s)
+int	ft_putptr(unsigned long long ptr)
 {
-	int		i;
-	char	*dest;
+	int	len;
 
-	i = ft_strlen(s);
-	dest = malloc(sizeof(char) * i + 1);
-	if (dest == NULL)
-		return (NULL);
-	ft_strcpy(dest, (char *)s);
-	return (dest);
+	len = 0;
+	if (!ptr)
+	{
+		len += ft_putstr("(nil)");
+		return (len);
+	}
+	len += ft_putstr("0x");
+	len += ft_putnbr_base(ptr, "0123456789abcdef");
+	return (len);
 }

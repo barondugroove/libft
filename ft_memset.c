@@ -6,15 +6,13 @@
 /*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 15:53:11 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 12:49:17 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:22:05 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, int n)
 {
-	size_t	i;
+	int		i;
 	char	*str;
 
 	i = 0;

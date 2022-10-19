@@ -6,15 +6,15 @@
 /*   By: bchabot <bchabot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:51:32 by bchabot           #+#    #+#             */
-/*   Updated: 2022/10/19 12:49:28 by bchabot          ###   ########.fr       */
+/*   Updated: 2022/10/19 15:19:21 by bchabot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include"libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, int n)
 {
-	size_t			i;
+	int				i;
 	unsigned char	*str;
 	unsigned char	ch;
 
